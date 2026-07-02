@@ -3,18 +3,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Ekaterina Handa — Legal Counsel</title>
-  <meta name="description" content="Ekaterina Handa — distinguished legal counsel combining classical jurisprudence with modern precision. Corporate law, litigation, and advisory services." />
+  <title>Ekaterina Handa — Judiciary of Kenya 2027</title>
+  <meta name="description" content="Ekaterina Handa for the Judiciary of Kenya — a campaign built on integrity, access to justice, and constitutional fidelity." />
 
-  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Lato:wght@300;400;700&family=Marcellus&display=swap" rel="stylesheet" />
 
   <style>
-    /* =============================================
-       DESIGN TOKENS — Ekaterina Brand Identity
-    ============================================= */
     :root {
       --deep-burgundy:  #3A0E18;
       --crimson:        #9B2335;
@@ -26,6 +22,8 @@
       --cream-mid:      #F5EBD8;
       --ink:            #1A0A0E;
       --ink-soft:       #3D2030;
+      --kenya-green:    #006600;
+      --kenya-red:      #BB0000;
 
       --font-display:   'Marcellus', Georgia, serif;
       --font-body:      'Cormorant Garamond', Georgia, serif;
@@ -39,7 +37,6 @@
       --nav-h:     72px;
     }
 
-    /* RESET */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; font-size: 16px; }
     body { font-family: var(--font-body); background: var(--warm-cream); color: var(--ink); line-height: 1.5; overflow-x: hidden; }
@@ -57,7 +54,6 @@
     .section-eyebrow { font-family: var(--font-ui); font-size: 0.6875rem; letter-spacing: 0.375em; text-transform: uppercase; color: var(--crimson); display: block; margin-bottom: var(--space-sm); }
     .section-title { font-family: var(--font-display); font-size: clamp(1.75rem, 3vw, 2.625rem); font-weight: 400; letter-spacing: 0.15em; text-transform: uppercase; color: var(--deep-burgundy); line-height: 1.2; }
     .section-body { font-family: var(--font-body); font-size: clamp(0.9375rem, 1.1vw, 1.0625rem); line-height: 1.8; color: var(--ink-soft); }
-    .section-intro { text-align: center; max-width: 600px; margin: 0 auto var(--space-lg); }
     .section { padding: var(--space-xl) 0; }
     .gold-bar { display: block; width: 48px; height: 1.5px; background: var(--handa-gold); margin-top: var(--space-sm); }
 
@@ -65,15 +61,19 @@
     .skip-link { position: absolute; top: -100px; left: var(--space-sm); background: var(--handa-gold); color: var(--deep-burgundy); padding: 0.5rem 1rem; font-family: var(--font-ui); font-size: 0.75rem; letter-spacing: 0.2em; text-transform: uppercase; z-index: 9999; transition: top 0.3s; }
     .skip-link:focus { top: var(--space-sm); }
 
+    /* KENYA FLAG STRIPE — subtle top accent */
+    .flag-stripe { height: 4px; display: flex; }
+    .flag-stripe__black { flex: 1; background: #000; }
+    .flag-stripe__red   { flex: 1; background: var(--kenya-red); }
+    .flag-stripe__green { flex: 1; background: var(--kenya-green); }
+
     /* SCROLL DIVIDER */
     .divider-wrap { padding: 0 0 var(--space-xl); display: flex; justify-content: center; }
     .section-divider { display: flex; align-items: center; gap: var(--space-md); max-width: 300px; width: 100%; }
     .section-divider__line { flex: 1; height: 1px; background: linear-gradient(to right, transparent, var(--handa-gold), transparent); }
     .section-divider__mark { width: 8px; height: 8px; border: 1px solid var(--handa-gold); transform: rotate(45deg); flex-shrink: 0; }
 
-    /* =============================================
-       NAVIGATION
-    ============================================= */
+    /* NAV */
     .nav { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; height: var(--nav-h); display: flex; align-items: center; padding: 0 var(--space-md); transition: background 0.4s ease, box-shadow 0.4s ease; }
     .nav--scrolled { background: var(--deep-burgundy); box-shadow: 0 2px 24px rgba(58,14,24,0.18); }
     .nav__inner { width: 100%; max-width: 1200px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; }
@@ -86,6 +86,8 @@
     .nav__links a::after { content: ''; position: absolute; bottom: -3px; left: 0; right: 100%; height: 1px; background: var(--light-gold); transition: right 0.3s ease; }
     .nav__links a:hover { color: var(--warm-cream); }
     .nav__links a:hover::after { right: 0; }
+    .nav__cta-pill { font-family: var(--font-ui); font-size: 0.5625rem; letter-spacing: 0.3em; text-transform: uppercase; background: var(--handa-gold); color: var(--deep-burgundy); padding: 0.5rem 1.25rem; transition: background 0.25s; white-space: nowrap; }
+    .nav__cta-pill:hover { background: var(--light-gold); }
     .nav__toggle { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 4px; }
     .nav__toggle span { display: block; width: 24px; height: 1.5px; background: var(--warm-cream); transition: transform 0.3s, opacity 0.3s; }
     .nav__toggle.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
@@ -95,35 +97,43 @@
     .nav__mobile.open { display: flex; }
     .nav__mobile a { font-family: var(--font-ui); font-size: 0.75rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--warm-cream); opacity: 0.85; padding: var(--space-xs) 0; border-bottom: 1px solid rgba(253,246,238,0.1); }
 
-    @media (max-width: 860px) {
+    @media (max-width: 900px) {
       .nav__links { display: none; }
+      .nav__cta-pill { display: none; }
       .nav__toggle { display: flex; }
     }
 
-    /* =============================================
-       HERO
-    ============================================= */
+    /* HERO */
     .hero { min-height: 100vh; background: var(--deep-burgundy); display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: var(--space-lg) var(--space-md); position: relative; overflow: hidden; }
     .hero::before { content: ''; position: absolute; inset: 0; background-image: repeating-linear-gradient(90deg, rgba(212,160,23,0.04) 0px, rgba(212,160,23,0.04) 1px, transparent 1px, transparent 120px); pointer-events: none; }
     .hero::after { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse 70% 70% at 50% 45%, transparent 30%, rgba(26,10,14,0.55) 100%); pointer-events: none; }
-    .hero__content { position: relative; z-index: 1; max-width: 700px; }
+    .hero__content { position: relative; z-index: 1; max-width: 800px; }
     .hero__monogram { color: var(--crimson); margin: 0 auto var(--space-md); opacity: 0; transform: translateY(-16px); animation: fadeDown 1s ease forwards 0.3s; }
     .hero__eyebrow { font-family: var(--font-ui); font-size: 0.625rem; letter-spacing: 0.45em; text-transform: uppercase; color: var(--handa-gold); display: block; margin-bottom: var(--space-sm); opacity: 0; animation: fadeUp 1s ease forwards 0.7s; }
-    .hero__name { font-family: var(--font-display); font-size: clamp(2.5rem, 6vw, 5rem); letter-spacing: 0.25em; text-transform: uppercase; color: var(--warm-cream); line-height: 1; margin-bottom: var(--space-md); opacity: 0; animation: fadeUp 1s ease forwards 0.9s; }
+    .hero__name { font-family: var(--font-display); font-size: clamp(2.5rem, 6vw, 5rem); letter-spacing: 0.25em; text-transform: uppercase; color: var(--warm-cream); line-height: 1; margin-bottom: var(--space-sm); opacity: 0; animation: fadeUp 1s ease forwards 0.9s; }
+    .hero__seat { font-family: var(--font-ui); font-size: clamp(0.625rem, 1.2vw, 0.8125rem); letter-spacing: 0.5em; text-transform: uppercase; color: var(--handa-gold); display: block; margin-bottom: var(--space-md); opacity: 0; animation: fadeUp 1s ease forwards 1.05s; }
     .hero__divider { display: flex; align-items: center; justify-content: center; gap: var(--space-md); margin: 0 auto var(--space-md); opacity: 0; animation: fadeUp 1s ease forwards 1.1s; }
     .hero__divider::before, .hero__divider::after { content: ''; width: 60px; height: 1px; }
     .hero__divider::before { background: linear-gradient(to right, transparent, var(--handa-gold)); }
     .hero__divider::after { background: linear-gradient(to left, transparent, var(--handa-gold)); }
     .hero__divider-icon { color: var(--handa-gold); font-size: 0.5rem; letter-spacing: 0.3em; font-family: var(--font-ui); text-transform: uppercase; }
-    .hero__tagline { font-family: var(--font-body); font-style: italic; font-size: clamp(1.125rem, 2vw, 1.5rem); color: rgba(253,246,238,0.75); line-height: 1.6; margin-bottom: var(--space-lg); font-weight: 300; opacity: 0; animation: fadeUp 1s ease forwards 1.2s; }
-    .hero__cta { display: inline-flex; align-items: center; gap: 0.75rem; font-family: var(--font-ui); font-size: 0.625rem; letter-spacing: 0.35em; text-transform: uppercase; color: var(--warm-cream); border: 1px solid rgba(212,160,23,0.5); padding: 1rem 2.5rem; position: relative; overflow: hidden; transition: color 0.3s, border-color 0.3s; opacity: 0; animation: fadeUp 1s ease forwards 1.4s; }
-    .hero__cta::before { content: ''; position: absolute; inset: 0; background: var(--handa-gold); transform: scaleX(0); transform-origin: left; transition: transform 0.35s ease; z-index: 0; }
-    .hero__cta span { position: relative; z-index: 1; }
-    .hero__cta:hover { color: var(--deep-burgundy); border-color: var(--handa-gold); }
-    .hero__cta:hover::before { transform: scaleX(1); }
+    .hero__tagline { font-family: var(--font-body); font-style: italic; font-size: clamp(1.125rem, 2vw, 1.625rem); color: rgba(253,246,238,0.8); line-height: 1.6; margin-bottom: var(--space-lg); font-weight: 300; opacity: 0; animation: fadeUp 1s ease forwards 1.2s; }
+    .hero__actions { display: flex; align-items: center; justify-content: center; gap: var(--space-md); flex-wrap: wrap; opacity: 0; animation: fadeUp 1s ease forwards 1.4s; }
+    .hero__cta { display: inline-flex; align-items: center; gap: 0.75rem; font-family: var(--font-ui); font-size: 0.625rem; letter-spacing: 0.35em; text-transform: uppercase; color: var(--deep-burgundy); background: var(--handa-gold); padding: 1rem 2.5rem; position: relative; overflow: hidden; transition: background 0.3s; }
+    .hero__cta:hover { background: var(--light-gold); }
+    .hero__cta-ghost { display: inline-flex; align-items: center; gap: 0.75rem; font-family: var(--font-ui); font-size: 0.625rem; letter-spacing: 0.35em; text-transform: uppercase; color: var(--warm-cream); border: 1px solid rgba(212,160,23,0.5); padding: 1rem 2.5rem; transition: border-color 0.3s, color 0.3s; }
+    .hero__cta-ghost:hover { border-color: var(--light-gold); color: var(--light-gold); }
     .hero__scroll { position: absolute; bottom: var(--space-md); left: 50%; transform: translateX(-50%); z-index: 1; display: flex; flex-direction: column; align-items: center; gap: 8px; color: rgba(253,246,238,0.4); font-family: var(--font-ui); font-size: 0.5625rem; letter-spacing: 0.3em; text-transform: uppercase; animation: fadeIn 2s ease forwards 2s, bounce 2.5s ease-in-out infinite 2.5s; opacity: 0; }
     .hero__scroll-line { width: 1px; height: 48px; background: linear-gradient(to bottom, transparent, rgba(212,160,23,0.5)); }
 
+    /* STATS BAND */
+    .stats-band { background: var(--handa-gold); padding: var(--space-md) 0; }
+    .stats-band__inner { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--space-sm); text-align: center; }
+    .stats-band__num { font-family: var(--font-display); font-size: clamp(1.75rem, 3vw, 2.5rem); color: var(--deep-burgundy); display: block; line-height: 1; }
+    .stats-band__label { font-family: var(--font-ui); font-size: 0.5625rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--dark-crimson); display: block; margin-top: 4px; }
+    @media (max-width: 600px) { .stats-band__inner { grid-template-columns: repeat(2, 1fr); gap: var(--space-md); } }
+
+    /* ANIMATIONS */
     @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
     @keyframes fadeDown { from { opacity: 0; transform: translateY(-16px); } to { opacity: 1; transform: translateY(0); } }
     @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
@@ -137,11 +147,9 @@
     .reveal-d3 { transition-delay: 0.35s; }
     .reveal-d4 { transition-delay: 0.5s; }
 
-    /* =============================================
-       ABOUT
-    ============================================= */
+    /* PROFILE / ABOUT */
     .about { background: var(--warm-cream); }
-    .about__grid { display: grid; grid-template-columns: 1fr 1.2fr; gap: var(--space-xl); align-items: center; }
+    .about__grid { display: grid; grid-template-columns: 1fr 1.3fr; gap: var(--space-xl); align-items: center; }
     .about__image-frame { position: relative; max-width: 400px; }
     .about__image-frame::before { content: ''; position: absolute; top: -16px; left: -16px; width: 64px; height: 64px; border-top: 2px solid var(--handa-gold); border-left: 2px solid var(--handa-gold); z-index: 2; }
     .about__image-frame::after { content: ''; position: absolute; bottom: -16px; right: -16px; width: 64px; height: 64px; border-bottom: 2px solid var(--crimson); border-right: 2px solid var(--crimson); z-index: 2; }
@@ -149,33 +157,37 @@
     .about__body { font-size: clamp(0.9375rem, 1.1vw, 1.0625rem); line-height: 1.85; color: var(--ink-soft); margin-bottom: var(--space-sm); }
     .about__credentials { display: flex; flex-wrap: wrap; gap: var(--space-xs) var(--space-md); margin-top: var(--space-md); }
     .about__credential { font-family: var(--font-ui); font-size: 0.625rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--dark-crimson); border-bottom: 1px solid rgba(107,26,42,0.3); padding-bottom: 2px; }
+    @media (max-width: 768px) { .about__grid { grid-template-columns: 1fr; gap: var(--space-lg); } .about__image-frame { max-width: 280px; margin: 0 auto; } }
 
-    @media (max-width: 768px) {
-      .about__grid { grid-template-columns: 1fr; gap: var(--space-lg); }
-      .about__image-frame { max-width: 280px; margin: 0 auto; }
-    }
+    /* MANIFESTO */
+    .manifesto { background: var(--deep-burgundy); position: relative; overflow: hidden; }
+    .manifesto::before { content: ''; position: absolute; inset: 0; background-image: repeating-linear-gradient(0deg, rgba(253,246,238,0.025) 0px, rgba(253,246,238,0.025) 1px, transparent 1px, transparent 80px); pointer-events: none; }
+    .manifesto .section-eyebrow { color: var(--light-gold); }
+    .manifesto .section-title { color: var(--warm-cream); }
+    .manifesto__header { text-align: center; margin-bottom: var(--space-lg); }
+    .manifesto__grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: var(--space-md); }
+    .manifesto__pillar { background: rgba(253,246,238,0.04); border: 1px solid rgba(212,160,23,0.2); padding: var(--space-lg) var(--space-md); position: relative; transition: background 0.3s, border-color 0.3s, transform 0.3s; }
+    .manifesto__pillar::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(to right, var(--crimson), var(--handa-gold)); transform: scaleX(0); transform-origin: left; transition: transform 0.4s ease; }
+    .manifesto__pillar:hover { background: rgba(253,246,238,0.07); border-color: rgba(212,160,23,0.45); transform: translateY(-4px); }
+    .manifesto__pillar:hover::before { transform: scaleX(1); }
+    .manifesto__pillar-num { font-family: var(--font-display); font-size: 2.5rem; color: rgba(212,160,23,0.2); display: block; line-height: 1; margin-bottom: var(--space-xs); }
+    .manifesto__pillar-icon { margin-bottom: var(--space-sm); color: var(--handa-gold); }
+    .manifesto__pillar-title { font-family: var(--font-display); font-size: 1.125rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--warm-cream); margin-bottom: var(--space-xs); }
+    .manifesto__pillar-body { font-family: var(--font-body); font-size: 0.9375rem; line-height: 1.75; color: rgba(253,246,238,0.65); }
 
-    /* =============================================
-       PRACTICE AREAS
-    ============================================= */
-    .practice { background: var(--deep-burgundy); position: relative; overflow: hidden; }
-    .practice::before { content: ''; position: absolute; inset: 0; background-image: repeating-linear-gradient(0deg, rgba(253,246,238,0.025) 0px, rgba(253,246,238,0.025) 1px, transparent 1px, transparent 80px); pointer-events: none; }
-    .practice .section-eyebrow { color: var(--light-gold); }
-    .practice .section-title { color: var(--warm-cream); }
-    .practice__header { text-align: center; margin-bottom: var(--space-lg); }
-    .practice__grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: var(--space-md); }
-    .practice__card { background: rgba(253,246,238,0.04); border: 1px solid rgba(212,160,23,0.2); padding: var(--space-lg) var(--space-md); position: relative; transition: background 0.3s, border-color 0.3s, transform 0.3s; }
-    .practice__card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(to right, var(--crimson), var(--handa-gold)); transform: scaleX(0); transform-origin: left; transition: transform 0.4s ease; }
-    .practice__card:hover { background: rgba(253,246,238,0.07); border-color: rgba(212,160,23,0.45); transform: translateY(-4px); }
-    .practice__card:hover::before { transform: scaleX(1); }
-    .practice__icon { margin-bottom: var(--space-md); color: var(--handa-gold); }
-    .practice__card-title { font-family: var(--font-display); font-size: 1.125rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--warm-cream); margin-bottom: var(--space-xs); }
-    .practice__card-body { font-family: var(--font-body); font-size: 0.9375rem; line-height: 1.75; color: rgba(253,246,238,0.65); }
+    /* PROJECTS */
+    .projects { background: var(--cream-mid); }
+    .projects__header { text-align: center; margin-bottom: var(--space-lg); }
+    .projects__grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: var(--space-md); }
+    .project-card { background: var(--warm-cream); border: 1px solid rgba(107,26,42,0.12); padding: var(--space-md); position: relative; }
+    .project-card__tag { font-family: var(--font-ui); font-size: 0.5rem; letter-spacing: 0.35em; text-transform: uppercase; color: var(--warm-cream); background: var(--crimson); padding: 3px 10px; display: inline-block; margin-bottom: var(--space-sm); }
+    .project-card__title { font-family: var(--font-display); font-size: 1.125rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--deep-burgundy); margin-bottom: var(--space-xs); }
+    .project-card__body { font-family: var(--font-body); font-size: 0.9375rem; line-height: 1.75; color: var(--ink-soft); margin-bottom: var(--space-sm); }
+    .project-card__stat { font-family: var(--font-ui); font-size: 0.5625rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--dark-crimson); border-top: 1px solid rgba(107,26,42,0.12); padding-top: var(--space-sm); }
+    .project-card__stat strong { font-family: var(--font-display); font-size: 1.25rem; color: var(--crimson); margin-right: 6px; }
 
-    /* =============================================
-       JOURNEY / TIMELINE
-    ============================================= */
-    .journey { background: var(--cream-mid); }
+    /* JOURNEY / TIMELINE */
+    .journey { background: var(--warm-cream); }
     .journey__header { text-align: center; margin-bottom: var(--space-xl); }
     .journey__timeline { position: relative; max-width: 800px; margin: 0 auto; }
     .journey__timeline::before { content: ''; position: absolute; top: 0; bottom: 0; left: 50%; transform: translateX(-50%); width: 1px; background: linear-gradient(to bottom, transparent, var(--handa-gold) 10%, var(--handa-gold) 90%, transparent); }
@@ -184,12 +196,11 @@
     .journey__item-content { flex: 1; padding: var(--space-md); background: var(--warm-cream); border: 1px solid rgba(107,26,42,0.12); }
     .journey__item:nth-child(odd) .journey__item-content { margin-right: 50%; }
     .journey__item:nth-child(even) .journey__item-content { margin-left: 50%; }
-    .journey__dot { position: absolute; left: 50%; top: var(--space-md); transform: translateX(-50%); width: 12px; height: 12px; border-radius: 50%; background: var(--handa-gold); border: 2px solid var(--cream-mid); z-index: 1; }
+    .journey__dot { position: absolute; left: 50%; top: var(--space-md); transform: translateX(-50%); width: 12px; height: 12px; border-radius: 50%; background: var(--handa-gold); border: 2px solid var(--warm-cream); z-index: 1; }
     .journey__year { font-family: var(--font-ui); font-size: 0.5625rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--crimson); display: block; margin-bottom: var(--space-xs); }
     .journey__item-title { font-family: var(--font-display); font-size: 1.0625rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--deep-burgundy); margin-bottom: 4px; }
     .journey__item-org { font-family: var(--font-body); font-style: italic; font-size: 0.9375rem; color: var(--dark-crimson); display: block; margin-bottom: var(--space-xs); }
     .journey__item-desc { font-size: 0.875rem; line-height: 1.75; color: var(--ink-soft); }
-
     @media (max-width: 700px) {
       .journey__timeline::before { left: 16px; }
       .journey__item, .journey__item:nth-child(even) { flex-direction: column; }
@@ -197,48 +208,35 @@
       .journey__dot { left: 16px; }
     }
 
-    /* =============================================
-       PERSONAL
-    ============================================= */
-    .personal { background: var(--warm-cream); }
-    .personal__grid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-lg); align-items: start; }
-    .personal__values { display: flex; flex-direction: column; gap: var(--space-md); }
-    .personal__value { display: flex; gap: var(--space-md); align-items: flex-start; }
-    .personal__value-icon { flex-shrink: 0; width: 40px; height: 40px; border: 1px solid var(--handa-gold); display: flex; align-items: center; justify-content: center; color: var(--handa-gold); }
-    .personal__value-title { font-family: var(--font-display); font-size: 1rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--deep-burgundy); margin-bottom: 4px; }
-    .personal__value-desc { font-size: 0.875rem; line-height: 1.75; color: var(--ink-soft); }
+    /* ALLIES */
+    .allies { background: var(--deep-burgundy); position: relative; overflow: hidden; }
+    .allies::after { content: ''; position: absolute; top: -100px; right: -100px; width: 400px; height: 400px; border-radius: 50%; background: radial-gradient(circle, rgba(155,35,53,0.15) 0%, transparent 70%); pointer-events: none; }
+    .allies .section-eyebrow { color: var(--light-gold); }
+    .allies .section-title { color: var(--warm-cream); }
+    .allies__header { text-align: center; margin-bottom: var(--space-lg); }
+    .allies__grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: var(--space-md); }
+    .ally { padding: var(--space-md); border: 1px solid rgba(212,160,23,0.15); background: rgba(253,246,238,0.03); display: flex; gap: var(--space-md); align-items: flex-start; }
+    .ally__avatar { width: 48px; height: 48px; border-radius: 50%; background: linear-gradient(135deg, var(--crimson), var(--dark-crimson)); display: flex; align-items: center; justify-content: center; font-family: var(--font-display); font-size: 1rem; color: var(--warm-cream); flex-shrink: 0; }
+    .ally__quote { font-family: var(--font-body); font-style: italic; font-size: 0.9375rem; line-height: 1.75; color: rgba(253,246,238,0.75); margin-bottom: var(--space-xs); }
+    .ally__name { font-family: var(--font-ui); font-size: 0.5625rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--light-gold); display: block; }
+    .ally__role { font-family: var(--font-body); font-style: italic; font-size: 0.8125rem; color: rgba(253,246,238,0.4); }
 
-    @media (max-width: 768px) { .personal__grid { grid-template-columns: 1fr; } }
+    /* ORGANISATIONS */
+    .orgs { background: var(--cream-mid); padding: var(--space-lg) 0; }
+    .orgs__header { text-align: center; margin-bottom: var(--space-md); }
+    .orgs__row { display: flex; flex-wrap: wrap; justify-content: center; gap: var(--space-md) var(--space-lg); }
+    .orgs__item { font-family: var(--font-ui); font-size: 0.5625rem; letter-spacing: 0.35em; text-transform: uppercase; color: var(--dark-crimson); border: 1px solid rgba(107,26,42,0.2); padding: var(--space-xs) var(--space-sm); }
 
-    /* =============================================
-       TESTIMONIALS
-    ============================================= */
-    .testimonials { background: var(--deep-burgundy); position: relative; overflow: hidden; }
-    .testimonials::after { content: ''; position: absolute; top: -100px; right: -100px; width: 400px; height: 400px; border-radius: 50%; background: radial-gradient(circle, rgba(155,35,53,0.15) 0%, transparent 70%); pointer-events: none; }
-    .testimonials .section-eyebrow { color: var(--light-gold); }
-    .testimonials .section-title { color: var(--warm-cream); }
-    .testimonials__header { text-align: center; margin-bottom: var(--space-lg); }
-    .testimonials__grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: var(--space-md); }
-    .testimonial { padding: var(--space-lg) var(--space-md); border: 1px solid rgba(212,160,23,0.15); background: rgba(253,246,238,0.03); }
-    .testimonial__mark { font-family: var(--font-display); font-size: 5rem; line-height: 0.6; color: var(--handa-gold); opacity: 0.3; margin-bottom: var(--space-sm); display: block; user-select: none; }
-    .testimonial__text { font-family: var(--font-body); font-style: italic; font-size: 1.0625rem; line-height: 1.8; color: rgba(253,246,238,0.8); margin-bottom: var(--space-md); }
-    .testimonial__author { display: flex; align-items: center; gap: var(--space-sm); }
-    .testimonial__avatar { width: 36px; height: 36px; border-radius: 50%; background: linear-gradient(135deg, var(--crimson), var(--dark-crimson)); display: flex; align-items: center; justify-content: center; font-family: var(--font-display); font-size: 0.875rem; color: var(--warm-cream); flex-shrink: 0; }
-    .testimonial__name { font-family: var(--font-ui); font-size: 0.625rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--light-gold); display: block; }
-    .testimonial__role { font-family: var(--font-body); font-style: italic; font-size: 0.8125rem; color: rgba(253,246,238,0.5); }
-
-    /* =============================================
-       CONTACT
-    ============================================= */
-    .contact { background: var(--warm-cream); }
-    .contact__grid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-xl); align-items: start; }
-    .contact__detail { display: flex; align-items: center; gap: var(--space-sm); margin-bottom: var(--space-sm); }
-    .contact__detail-icon { color: var(--crimson); flex-shrink: 0; }
-    .contact__detail-text { font-family: var(--font-ui); font-size: 0.6875rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--ink-soft); }
-    .contact__social { display: flex; gap: var(--space-sm); margin-top: var(--space-md); }
-    .contact__social-link { width: 40px; height: 40px; border: 1px solid rgba(107,26,42,0.3); display: flex; align-items: center; justify-content: center; color: var(--dark-crimson); transition: border-color 0.25s, color 0.25s, background 0.25s; }
-    .contact__social-link:hover { border-color: var(--handa-gold); color: var(--deep-burgundy); background: var(--light-gold); }
-    .contact__form { display: flex; flex-direction: column; gap: var(--space-sm); }
+    /* PLEDGE / CONTACT */
+    .pledge { background: var(--warm-cream); }
+    .pledge__grid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-xl); align-items: start; }
+    .pledge__detail { display: flex; align-items: flex-start; gap: var(--space-sm); margin-bottom: var(--space-sm); }
+    .pledge__detail-icon { color: var(--crimson); flex-shrink: 0; margin-top: 3px; }
+    .pledge__detail-text { font-family: var(--font-ui); font-size: 0.6875rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--ink-soft); }
+    .pledge__social { display: flex; gap: var(--space-sm); margin-top: var(--space-md); }
+    .pledge__social-link { width: 40px; height: 40px; border: 1px solid rgba(107,26,42,0.3); display: flex; align-items: center; justify-content: center; color: var(--dark-crimson); transition: border-color 0.25s, color 0.25s, background 0.25s; }
+    .pledge__social-link:hover { border-color: var(--handa-gold); color: var(--deep-burgundy); background: var(--light-gold); }
+    .pledge__form { display: flex; flex-direction: column; gap: var(--space-sm); }
     .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-sm); }
     .field { display: flex; flex-direction: column; gap: 6px; }
     .field label { font-family: var(--font-ui); font-size: 0.5625rem; letter-spacing: 0.35em; text-transform: uppercase; color: var(--crimson); }
@@ -254,15 +252,9 @@
     .btn-primary:hover::before { transform: scaleX(1); }
     .form-success { display: none; font-family: var(--font-body); font-style: italic; color: var(--crimson); font-size: 1rem; padding: var(--space-md); border: 1px solid rgba(155,35,53,0.25); text-align: center; }
     .form-success.visible { display: block; }
+    @media (max-width: 768px) { .pledge__grid { grid-template-columns: 1fr; gap: var(--space-lg); } .form-row { grid-template-columns: 1fr; } }
 
-    @media (max-width: 768px) {
-      .contact__grid { grid-template-columns: 1fr; gap: var(--space-lg); }
-      .form-row { grid-template-columns: 1fr; }
-    }
-
-    /* =============================================
-       FOOTER
-    ============================================= */
+    /* FOOTER */
     .footer { background: var(--deep-burgundy); padding: var(--space-xl) 0 var(--space-md); }
     .footer__top { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: var(--space-lg); padding-bottom: var(--space-lg); border-bottom: 1px solid rgba(212,160,23,0.2); margin-bottom: var(--space-md); }
     .footer__brand-name { font-family: var(--font-display); font-size: 1.25rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--warm-cream); margin-bottom: var(--space-xs); }
@@ -276,65 +268,81 @@
     .footer__legal { display: flex; gap: var(--space-md); }
     .footer__legal a { font-family: var(--font-ui); font-size: 0.5625rem; letter-spacing: 0.25em; text-transform: uppercase; color: rgba(253,246,238,0.3); transition: color 0.25s; }
     .footer__legal a:hover { color: var(--light-gold); }
+    @media (max-width: 640px) { .footer__top { grid-template-columns: 1fr; gap: var(--space-md); } .footer__bottom { flex-direction: column; align-items: flex-start; } }
 
-    @media (max-width: 640px) {
-      .footer__top { grid-template-columns: 1fr; gap: var(--space-md); }
-      .footer__bottom { flex-direction: column; align-items: flex-start; }
-    }
+    /* TH MONOGRAM SVG shared paths */
+    .th-logo { fill: currentColor; }
   </style>
 </head>
 <body>
+
+  <!-- Kenya flag stripe at very top -->
+  <div class="flag-stripe" aria-hidden="true">
+    <div class="flag-stripe__black"></div>
+    <div class="flag-stripe__red"></div>
+    <div class="flag-stripe__green"></div>
+  </div>
+
   <a href="#main" class="skip-link">Skip to main content</a>
 
   <!-- NAV -->
   <nav class="nav" id="nav" role="navigation" aria-label="Main navigation">
     <div class="nav__inner">
-      <a href="#hero" class="nav__logo" aria-label="Ekaterina — Home">
+      <a href="#hero" class="nav__logo" aria-label="Ekaterina Handa — Home">
         <span class="nav__logo-mark" aria-hidden="true">
-          <svg width="26" height="32" viewBox="0 0 28 34" xmlns="http://www.w3.org/2000/svg" fill="currentColor">
-            <rect x="2" y="0" width="24" height="2.5"/><rect x="2" y="2.5" width="4" height="22"/><rect x="22" y="2.5" width="4" height="22"/><rect x="6" y="12" width="16" height="2.5"/><rect x="6" y="2.5" width="3" height="9"/><rect x="19" y="2.5" width="3" height="9"/><rect x="6" y="14.5" width="3" height="10"/><rect x="19" y="14.5" width="3" height="10"/><rect x="2" y="24.5" width="24" height="2.5"/><rect x="0" y="27" width="10" height="3"/><rect x="18" y="27" width="10" height="3"/>
+          <svg width="26" height="26" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" class="th-logo">
+            <rect x="20" y="20" width="160" height="14"/><rect x="20" y="20" width="14" height="160"/><rect x="166" y="20" width="14" height="160"/><rect x="20" y="166" width="60" height="14"/><rect x="120" y="166" width="60" height="14"/><rect x="62" y="20" width="14" height="90"/><rect x="124" y="20" width="14" height="90"/><rect x="62" y="96" width="76" height="14"/><rect x="62" y="110" width="14" height="70"/><rect x="124" y="110" width="14" height="70"/>
           </svg>
         </span>
         <span class="nav__logo-word">Ekaterina</span>
       </a>
       <ul class="nav__links">
-        <li><a href="#about">About</a></li>
-        <li><a href="#practice">Practice</a></li>
+        <li><a href="#about">Profile</a></li>
+        <li><a href="#manifesto">Manifesto</a></li>
+        <li><a href="#projects">Projects</a></li>
         <li><a href="#journey">Journey</a></li>
-        <li><a href="#testimonials">Testimonials</a></li>
-        <li><a href="#contact">Contact</a></li>
+        <li><a href="#allies">Allies</a></li>
+        <li><a href="#pledge">Pledge Support</a></li>
       </ul>
+      <a href="#pledge" class="nav__cta-pill">Support the Campaign</a>
       <button class="nav__toggle" id="navToggle" aria-label="Toggle mobile menu" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
     </div>
   </nav>
   <div class="nav__mobile" id="navMobile">
-    <a href="#about">About</a><a href="#practice">Practice Areas</a><a href="#journey">Journey</a><a href="#personal">Personal</a><a href="#testimonials">Testimonials</a><a href="#contact">Contact</a>
+    <a href="#about">Profile</a>
+    <a href="#manifesto">Manifesto</a>
+    <a href="#projects">Projects</a>
+    <a href="#journey">Journey</a>
+    <a href="#allies">Allies</a>
+    <a href="#pledge">Pledge Support</a>
   </div>
 
   <main id="main">
 
     <!-- HERO -->
-    <section class="hero" id="hero" aria-label="Introduction">
+    <section class="hero" id="hero" aria-label="Campaign introduction">
       <div class="hero__content">
         <div class="hero__monogram" aria-hidden="true">
-          <svg width="72" height="88" viewBox="0 0 28 34" xmlns="http://www.w3.org/2000/svg" fill="currentColor">
-            <rect x="2" y="0" width="24" height="2.5"/><rect x="2" y="2.5" width="4" height="22"/><rect x="22" y="2.5" width="4" height="22"/><rect x="6" y="12" width="16" height="2.5"/><rect x="6" y="2.5" width="3" height="9"/><rect x="19" y="2.5" width="3" height="9"/><rect x="6" y="14.5" width="3" height="10"/><rect x="19" y="14.5" width="3" height="10"/><rect x="2" y="24.5" width="24" height="2.5"/><rect x="0" y="27" width="10" height="3"/><rect x="18" y="27" width="10" height="3"/>
+          <svg width="72" height="72" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" class="th-logo">
+            <rect x="20" y="20" width="160" height="14"/><rect x="20" y="20" width="14" height="160"/><rect x="166" y="20" width="14" height="160"/><rect x="20" y="166" width="60" height="14"/><rect x="120" y="166" width="60" height="14"/><rect x="62" y="20" width="14" height="90"/><rect x="124" y="20" width="14" height="90"/><rect x="62" y="96" width="76" height="14"/><rect x="62" y="110" width="14" height="70"/><rect x="124" y="110" width="14" height="70"/>
           </svg>
         </div>
-        <span class="hero__eyebrow">Counsel · Advocate · Architect of Justice</span>
+        <span class="hero__eyebrow">Candidate · Judiciary of Kenya · 2027</span>
         <h1 class="hero__name">Ekaterina<br/>Handa</h1>
+        <span class="hero__seat">Court of Appeal · Nairobi Circuit</span>
         <div class="hero__divider" aria-hidden="true">
-          <span class="hero__divider-icon">Est. 2009</span>
+          <span class="hero__divider-icon">Justice · Integrity · Transformation</span>
         </div>
         <p class="hero__tagline">
-          Where classical jurisprudence meets modern precision —<br/>
-          building pillars of legal certainty for those who cannot afford uncertainty.
+          Kenya's courts belong to every Kenyan.<br/>
+          I am standing to ensure they deliver on that promise.
         </p>
-        <a href="#about" class="hero__cta">
-          <span>Discover Her Story</span>
-        </a>
+        <div class="hero__actions">
+          <a href="#manifesto" class="hero__cta">Read the Manifesto</a>
+          <a href="#pledge" class="hero__cta-ghost">Pledge Your Support</a>
+        </div>
       </div>
       <div class="hero__scroll" aria-hidden="true">
         <div class="hero__scroll-line"></div>
@@ -342,7 +350,31 @@
       </div>
     </section>
 
-    <!-- ABOUT -->
+    <!-- STATS BAND -->
+    <div class="stats-band" role="region" aria-label="Campaign at a glance">
+      <div class="container">
+        <div class="stats-band__inner">
+          <div>
+            <span class="stats-band__num">15+</span>
+            <span class="stats-band__label">Years in Practice</span>
+          </div>
+          <div>
+            <span class="stats-band__num">340+</span>
+            <span class="stats-band__label">Cases Argued</span>
+          </div>
+          <div>
+            <span class="stats-band__num">3</span>
+            <span class="stats-band__label">Continents of Experience</span>
+          </div>
+          <div>
+            <span class="stats-band__num">1,200+</span>
+            <span class="stats-band__label">Pro Bono Hours</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PROFILE -->
     <section class="section about" id="about" aria-labelledby="about-title">
       <div class="container">
         <div class="about__grid">
@@ -355,22 +387,22 @@
               />
             </div>
           </div>
-
           <div>
-            <span class="section-eyebrow reveal">The Counsel</span>
-            <h2 class="section-title reveal reveal-d1" id="about-title">Authority Built<br/>on Principle</h2>
+            <span class="section-eyebrow reveal">The Candidate</span>
+            <h2 class="section-title reveal reveal-d1" id="about-title">A Jurist Built<br/>for This Moment</h2>
             <span class="gold-bar reveal reveal-d1"></span>
             <blockquote class="about__quote reveal reveal-d2">
-              "The law is not merely a profession — it is an architecture of trust, constructed brick by brick, argument by argument."
+              "An independent judiciary is not a gift from those in power — it is a right extracted, defended, and renewed by every generation of Kenyans."
             </blockquote>
-            <p class="about__body reveal reveal-d2">Ekaterina Handa has spent over fifteen years at the intersection of corporate integrity and human justice. Trained at one of Europe's most distinguished faculties of law and tempered by practice across three continents, she brings an uncommon breadth of perspective to every mandate she accepts.</p>
-            <p class="about__body reveal reveal-d3">Her approach is architecturally precise: she begins with the structure — understanding not just what the law says, but why it was built that way — and then crafts arguments of both intellectual rigour and persuasive clarity. Clients describe working with her as illuminating; opponents describe it as formidable.</p>
-            <p class="about__body reveal reveal-d3">Beyond the courtroom, Ekaterina mentors the next generation of legal minds, contributes to international arbitration scholarship, and advocates for access to justice across emerging economies through the Handa Foundation.</p>
+            <p class="about__body reveal reveal-d2">Ekaterina Handa has spent over fifteen years at the intersection of corporate integrity and human justice — across East Africa, Europe, and international arbitration tribunals. She has argued before the High Court of Kenya, the East African Court of Justice, and the ICC, and spent a decade building the kind of courtroom discipline that the Court of Appeal demands.</p>
+            <p class="about__body reveal reveal-d3">Her campaign is not about personal ambition. It is about returning the judiciary to its constitutional purpose: to be the last line of defence for ordinary Kenyans, not a revolving door for the well-connected. She brings fifteen years of deep legal practice and zero tolerance for the institutional erosion that has weakened public trust in Kenya's courts.</p>
             <div class="about__credentials reveal reveal-d4">
               <span class="about__credential">LLB — University of Edinburgh</span>
               <span class="about__credential">LLM — Sciences Po Paris</span>
               <span class="about__credential">Called to the Bar — 2009</span>
+              <span class="about__credential">Advocate — High Court of Kenya</span>
               <span class="about__credential">ICC Arbitration Panel</span>
+              <span class="about__credential">LSK Member in Good Standing</span>
             </div>
           </div>
         </div>
@@ -379,73 +411,137 @@
 
     <div class="divider-wrap"><div class="container"><div class="section-divider reveal"><div class="section-divider__line"></div><div class="section-divider__mark"></div><div class="section-divider__line"></div></div></div></div>
 
-    <!-- PRACTICE AREAS -->
-    <section class="section practice" id="practice" aria-labelledby="practice-title">
+    <!-- MANIFESTO -->
+    <section class="section manifesto" id="manifesto" aria-labelledby="manifesto-title">
       <div class="container">
-        <div class="practice__header">
-          <span class="section-eyebrow reveal">Specialisations</span>
-          <h2 class="section-title reveal reveal-d1" id="practice-title">Areas of Practice</h2>
+        <div class="manifesto__header">
+          <span class="section-eyebrow reveal">The Manifesto</span>
+          <h2 class="section-title reveal reveal-d1" id="manifesto-title">Six Pillars of Judicial Reform</h2>
         </div>
-        <div class="practice__grid">
+        <div class="manifesto__grid">
 
-          <article class="practice__card reveal reveal-d1">
-            <div class="practice__icon" aria-hidden="true">
-              <svg width="36" height="36" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="18" y1="4" x2="18" y2="32"/><line x1="6" y1="32" x2="30" y2="32"/><line x1="8" y1="10" x2="28" y2="10"/><polyline points="4,10 8,10 12,20 4,20 8,10"/><polyline points="24,10 28,10 32,20 24,20 28,10"/></svg>
+          <article class="manifesto__pillar reveal reveal-d1">
+            <span class="manifesto__pillar-num">01</span>
+            <div class="manifesto__pillar-icon" aria-hidden="true">
+              <svg width="32" height="32" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="18" y1="4" x2="18" y2="32"/><line x1="6" y1="32" x2="30" y2="32"/><line x1="8" y1="10" x2="28" y2="10"/><polyline points="4,10 8,10 12,20 4,20 8,10"/><polyline points="24,10 28,10 32,20 24,20 28,10"/></svg>
             </div>
-            <h3 class="practice__card-title">Commercial Litigation</h3>
-            <p class="practice__card-body">Complex multi-party disputes, injunctions, and enforcement proceedings across common law and civil law jurisdictions. A record of landmark rulings in contractual interpretation and corporate liability.</p>
+            <h3 class="manifesto__pillar-title">Judicial Independence</h3>
+            <p class="manifesto__pillar-body">Advocate for enforceable firewalls between executive influence and judicial appointments. No sitting judge should fear career consequences for an honest ruling against the state.</p>
           </article>
 
-          <article class="practice__card reveal reveal-d2">
-            <div class="practice__icon" aria-hidden="true">
-              <svg width="36" height="36" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="6" y="14" width="24" height="18"/><rect x="2" y="10" width="32" height="4"/><line x1="18" y1="10" x2="18" y2="4"/><line x1="12" y1="4" x2="24" y2="4"/><rect x="11" y="20" width="5" height="12"/><rect x="20" y="20" width="5" height="12"/></svg>
+          <article class="manifesto__pillar reveal reveal-d2">
+            <span class="manifesto__pillar-num">02</span>
+            <div class="manifesto__pillar-icon" aria-hidden="true">
+              <svg width="32" height="32" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="18" cy="12" r="6"/><path d="M6 30c0-6 5-10 12-10s12 4 12 10"/><line x1="22" y1="8" x2="28" y2="4"/><line x1="22" y1="14" x2="28" y2="18"/></svg>
             </div>
-            <h3 class="practice__card-title">Corporate Advisory</h3>
-            <p class="practice__card-body">Strategic counsel on mergers and acquisitions, governance structures, regulatory compliance, and cross-border transactions. Trusted advisor to boards and C-suite executives in high-stakes decision-making.</p>
+            <h3 class="manifesto__pillar-title">Access to Justice</h3>
+            <p class="manifesto__pillar-body">Champion a public legal aid framework that reaches informal settlements and rural counties. Justice delayed by poverty is justice denied — the courts must reflect this truth structurally.</p>
           </article>
 
-          <article class="practice__card reveal reveal-d3">
-            <div class="practice__icon" aria-hidden="true">
-              <svg width="36" height="36" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="18" cy="18" r="14"/><ellipse cx="18" cy="18" rx="6" ry="14"/><line x1="4" y1="18" x2="32" y2="18"/><line x1="6" y1="10" x2="30" y2="10"/><line x1="6" y1="26" x2="30" y2="26"/></svg>
+          <article class="manifesto__pillar reveal reveal-d3">
+            <span class="manifesto__pillar-num">03</span>
+            <div class="manifesto__pillar-icon" aria-hidden="true">
+              <svg width="32" height="32" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="6" y="8" width="24" height="20"/><line x1="12" y1="14" x2="24" y2="14"/><line x1="12" y1="19" x2="24" y2="19"/><line x1="12" y1="24" x2="18" y2="24"/><rect x="14" y="2" width="8" height="6"/></svg>
             </div>
-            <h3 class="practice__card-title">International Arbitration</h3>
-            <p class="practice__card-body">Representing sovereign states, multinationals, and individuals before ICC, ICSID, and LCIA tribunals. Specialist in investment treaty claims and state-commercial disputes with cross-cultural sensitivity.</p>
+            <h3 class="manifesto__pillar-title">Case Backlog Reduction</h3>
+            <p class="manifesto__pillar-body">Deploy structured case management, mandatory pre-trial timelines, and technology-assisted scheduling to reduce the Court of Appeal backlog by 40% within three years of appointment.</p>
           </article>
 
-          <article class="practice__card reveal reveal-d1">
-            <div class="practice__icon" aria-hidden="true">
-              <svg width="36" height="36" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 4 L32 10 L32 20 C32 27 25 32 18 34 C11 32 4 27 4 20 L4 10 Z"/><polyline points="12,18 16,22 24,14"/></svg>
+          <article class="manifesto__pillar reveal reveal-d1">
+            <span class="manifesto__pillar-num">04</span>
+            <div class="manifesto__pillar-icon" aria-hidden="true">
+              <svg width="32" height="32" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 4 L32 10 L32 20 C32 27 25 32 18 34 C11 32 4 27 4 20 L4 10 Z"/><polyline points="12,18 16,22 24,14"/></svg>
             </div>
-            <h3 class="practice__card-title">Regulatory Defence</h3>
-            <p class="practice__card-body">Navigating investigations by financial regulators, antitrust authorities, and governmental bodies. Expert in dawn-raid management, leniency applications, and enforcement appeal proceedings.</p>
+            <h3 class="manifesto__pillar-title">Anti-Corruption Bench</h3>
+            <p class="manifesto__pillar-body">Support the creation of a dedicated anti-corruption appellate track with specialised judicial training, asset declaration for all judicial officers, and transparent disciplinary proceedings.</p>
           </article>
 
-          <article class="practice__card reveal reveal-d2">
-            <div class="practice__icon" aria-hidden="true">
-              <svg width="36" height="36" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 22 L10 14 L16 18 L20 14 L30 18 L34 22"/><path d="M10 14 Q14 10 18 12 Q22 10 26 14"/><line x1="2" y1="26" x2="34" y2="26"/></svg>
+          <article class="manifesto__pillar reveal reveal-d2">
+            <span class="manifesto__pillar-num">05</span>
+            <div class="manifesto__pillar-icon" aria-hidden="true">
+              <svg width="32" height="32" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="18" cy="18" r="14"/><ellipse cx="18" cy="18" rx="6" ry="14"/><line x1="4" y1="18" x2="32" y2="18"/></svg>
             </div>
-            <h3 class="practice__card-title">Dispute Mediation</h3>
-            <p class="practice__card-body">Accredited mediator with a philosophy that the best resolutions preserve relationships. Skilled in transformative and evaluative mediation models for commercial, family, and community disputes.</p>
+            <h3 class="manifesto__pillar-title">Constitutional Fidelity</h3>
+            <p class="manifesto__pillar-body">Commit to the full application of the 2010 Constitution — including devolution, bill of rights, and gender equity provisions — in every decision from the bench, without political deference.</p>
           </article>
 
-          <article class="practice__card reveal reveal-d3">
-            <div class="practice__icon" aria-hidden="true">
-              <svg width="36" height="36" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="8" y="4" width="20" height="28" rx="1"/><line x1="12" y1="12" x2="24" y2="12"/><line x1="12" y1="17" x2="24" y2="17"/><line x1="12" y1="22" x2="20" y2="22"/><path d="M22 24 L28 30" stroke-linecap="round"/><circle cx="28" cy="30" r="2"/></svg>
+          <article class="manifesto__pillar reveal reveal-d3">
+            <span class="manifesto__pillar-num">06</span>
+            <div class="manifesto__pillar-icon" aria-hidden="true">
+              <svg width="32" height="32" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="8" y="4" width="20" height="28" rx="1"/><line x1="12" y1="12" x2="24" y2="12"/><line x1="12" y1="17" x2="24" y2="17"/><line x1="12" y1="22" x2="20" y2="22"/></svg>
             </div>
-            <h3 class="practice__card-title">Contract Architecture</h3>
-            <p class="practice__card-body">Drafting and negotiating complex commercial agreements, joint ventures, licensing arrangements, and bespoke financing structures — with the precision of an engineer and the foresight of a strategist.</p>
+            <h3 class="manifesto__pillar-title">Judicial Transparency</h3>
+            <p class="manifesto__pillar-body">Publish reasoned judgments within 60 days of hearing, open court statistics to public scrutiny, and support live-streaming of significant public-interest appeals where security permits.</p>
           </article>
 
         </div>
       </div>
     </section>
 
+    <!-- PROJECTS -->
+    <section class="section projects" id="projects" aria-labelledby="projects-title">
+      <div class="container">
+        <div class="projects__header">
+          <span class="section-eyebrow reveal">On the Ground</span>
+          <h2 class="section-title reveal reveal-d1" id="projects-title">Initiatives Already Underway</h2>
+          <span class="gold-bar reveal reveal-d2" style="margin: var(--space-sm) auto 0;"></span>
+        </div>
+        <div class="projects__grid">
+
+          <div class="project-card reveal reveal-d1">
+            <span class="project-card__tag">Access to Justice</span>
+            <h3 class="project-card__title">Handa Mobile Legal Clinic</h3>
+            <p class="project-card__body">A rotating legal aid clinic serving informal settlements in Mathare, Kibera, and Korogocho — providing free legal advice, court representation referrals, and know-your-rights workshops in Kiswahili and Sheng.</p>
+            <p class="project-card__stat"><strong>2,400+</strong> residents served since 2021</p>
+          </div>
+
+          <div class="project-card reveal reveal-d2">
+            <span class="project-card__tag">Legal Education</span>
+            <h3 class="project-card__title">Handa Foundation Scholarship</h3>
+            <p class="project-card__body">Annual scholarships for fifteen high-achieving students from underserved counties to study law at Kenyan universities. Scholars receive mentorship, moot court training, and guaranteed internship placements.</p>
+            <p class="project-card__stat"><strong>60</strong> scholars funded across 4 years</p>
+          </div>
+
+          <div class="project-card reveal reveal-d3">
+            <span class="project-card__tag">Court Reform</span>
+            <h3 class="project-card__title">Open Docket Initiative</h3>
+            <p class="project-card__body">Partnering with the JSC and Strathmore Law School to build a public-facing case tracking dashboard — allowing litigants, journalists, and civil society to monitor case status and judgment delivery timelines.</p>
+            <p class="project-card__stat"><strong>Pilot</strong> launching Nairobi courts Q3 2025</p>
+          </div>
+
+          <div class="project-card reveal reveal-d1">
+            <span class="project-card__tag">Gender & Justice</span>
+            <h3 class="project-card__title">Women on the Bench</h3>
+            <p class="project-card__body">A structured mentorship programme pairing senior women advocates with aspiring female jurists, addressing the structural barriers that keep women underrepresented at appellate and Supreme Court levels.</p>
+            <p class="project-card__stat"><strong>35</strong> mentorship pairs active</p>
+          </div>
+
+          <div class="project-card reveal reveal-d2">
+            <span class="project-card__tag">Devolution</span>
+            <h3 class="project-card__title">County Court Capacity Building</h3>
+            <p class="project-card__body">Training programme for magistrates in Northern and Coastal counties on constitutional law, land rights, and gender-based violence proceedings — funded through LSK and international partners.</p>
+            <p class="project-card__stat"><strong>120</strong> officers trained in 2023–24</p>
+          </div>
+
+          <div class="project-card reveal reveal-d3">
+            <span class="project-card__tag">Technology</span>
+            <h3 class="project-card__title">E-Filing Advocacy</h3>
+            <p class="project-card__body">Driving adoption of Kenya's e-filing system across all Court of Appeal registries, reducing physical filing barriers for upcountry litigants and reducing administrative bottlenecks that contribute to delays.</p>
+            <p class="project-card__stat"><strong>6 registries</strong> targeted for full rollout</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <div class="divider-wrap"><div class="container"><div class="section-divider reveal"><div class="section-divider__line"></div><div class="section-divider__mark"></div><div class="section-divider__line"></div></div></div></div>
+
     <!-- JOURNEY -->
     <section class="section journey" id="journey" aria-labelledby="journey-title">
       <div class="container">
         <div class="journey__header">
           <span class="section-eyebrow reveal">Professional Journey</span>
-          <h2 class="section-title reveal reveal-d1" id="journey-title">Milestones of Excellence</h2>
+          <h2 class="section-title reveal reveal-d1" id="journey-title">A Career Built for the Bench</h2>
           <span class="gold-bar reveal reveal-d2" style="margin:var(--space-sm) auto 0;"></span>
         </div>
         <div class="journey__timeline">
@@ -456,7 +552,7 @@
               <span class="journey__year">2024 — Present</span>
               <h3 class="journey__item-title">Senior Partner</h3>
               <span class="journey__item-org">Handa & Associates — Nairobi · London</span>
-              <p class="journey__item-desc">Founding her own practice after two decades in international firms, combining full-service commercial law with a mission-driven access to justice initiative for East African entrepreneurs.</p>
+              <p class="journey__item-desc">Founded her own practice with a dual mandate: full-service commercial litigation, and a pro bono legal aid arm serving low-income Kenyans. The firm has appeared in over 80 matters before the High Court and Court of Appeal.</p>
             </div>
           </div>
 
@@ -466,7 +562,7 @@
               <span class="journey__year">2017 — 2024</span>
               <h3 class="journey__item-title">Partner, International Disputes</h3>
               <span class="journey__item-org">Clifford Chance LLP — Paris & London</span>
-              <p class="journey__item-desc">Led a team of twelve in cross-border M&A disputes and investment treaty arbitration, advising sovereign wealth funds and FTSE 100 clients on matters exceeding £2bn in combined value.</p>
+              <p class="journey__item-desc">Led a team of twelve in cross-border M&A disputes and investment treaty arbitration, with matters before the EACJ and ICC. Represented the Government of Kenya in two landmark ICSID proceedings.</p>
             </div>
           </div>
 
@@ -476,7 +572,7 @@
               <span class="journey__year">2013 — 2017</span>
               <h3 class="journey__item-title">Senior Associate</h3>
               <span class="journey__item-org">Freshfields Bruckhaus Deringer — Brussels</span>
-              <p class="journey__item-desc">Specialised in EU competition law and state aid, acting for governments and blue-chip corporations during a period of landmark EC enforcement actions in the technology and energy sectors.</p>
+              <p class="journey__item-desc">Specialised in EU competition law and state aid, acting for governments and blue-chip corporations in landmark EC enforcement actions. Built the regulatory litigation expertise now central to her judicial candidacy.</p>
             </div>
           </div>
 
@@ -486,7 +582,7 @@
               <span class="journey__year">2011 — 2013</span>
               <h3 class="journey__item-title">LLM — International Business Law</h3>
               <span class="journey__item-org">Sciences Po, Paris School of Law</span>
-              <p class="journey__item-desc">Graduated with distinction. Thesis on investment treaty interpretation awarded the Société de Législation Comparée prize for outstanding contribution to comparative legal scholarship.</p>
+              <p class="journey__item-desc">Graduated with distinction. Thesis on investment treaty interpretation awarded the Société de Législation Comparée prize. Developed the comparative constitutional expertise underpinning her reform agenda.</p>
             </div>
           </div>
 
@@ -494,9 +590,9 @@
             <div class="journey__dot" aria-hidden="true"></div>
             <div class="journey__item-content">
               <span class="journey__year">2009</span>
-              <h3 class="journey__item-title">Called to the Bar</h3>
-              <span class="journey__item-org">Lincoln's Inn, London</span>
-              <p class="journey__item-desc">Commended for exceptional advocacy during pupillage. First practice at a leading commercial set in the Temple, London, handling High Court litigation and appellate work from the outset.</p>
+              <h3 class="journey__item-title">Called to the Bar — Lincoln's Inn, London</h3>
+              <span class="journey__item-org">Admitted — High Court of Kenya, 2010</span>
+              <p class="journey__item-desc">Commenced practice in Nairobi handling constitutional petitions and employment tribunal matters. First case before the Court of Appeal was argued within two years of admission.</p>
             </div>
           </div>
 
@@ -504,111 +600,118 @@
       </div>
     </section>
 
-    <!-- PERSONAL -->
-    <section class="section personal" id="personal" aria-labelledby="personal-title">
+    <!-- ALLIES -->
+    <section class="section allies" id="allies" aria-labelledby="allies-title">
       <div class="container">
-        <div class="personal__grid">
+        <div class="allies__header">
+          <span class="section-eyebrow reveal">Voices of Support</span>
+          <h2 class="section-title reveal reveal-d1" id="allies-title">Those Who Stand With Her</h2>
+        </div>
+        <div class="allies__grid">
+
+          <div class="ally reveal reveal-d1">
+            <div class="ally__avatar" aria-hidden="true">RO</div>
+            <div>
+              <p class="ally__quote">"Ekaterina brings the rare combination of international legal sophistication and genuine commitment to Kenyan justice. The Court of Appeal would be immeasurably stronger with her on the bench."</p>
+              <cite class="ally__name">Prof. Rose Otieno</cite>
+              <span class="ally__role">Dean, Strathmore Law School</span>
+            </div>
+          </div>
+
+          <div class="ally reveal reveal-d2">
+            <div class="ally__avatar" aria-hidden="true">JK</div>
+            <div>
+              <p class="ally__quote">"In fifteen years of observing the bar, I have encountered few advocates with her grasp of constitutional principle and her willingness to argue uncomfortable truths before uncomfortable judges."</p>
+              <cite class="ally__name">Justice James Kariuki (Ret.)</cite>
+              <span class="ally__role">Former High Court Judge, Constitutional Division</span>
+            </div>
+          </div>
+
+          <div class="ally reveal reveal-d3">
+            <div class="ally__avatar" aria-hidden="true">AN</div>
+            <div>
+              <p class="ally__quote">"Her mobile legal clinic has done more for access to justice in Mathare than a decade of policy papers. She is a reformer who acts, not just advocates."</p>
+              <cite class="ally__name">Amina Njoroge</cite>
+              <span class="ally__role">Executive Director, Kenya Legal Aid Network</span>
+            </div>
+          </div>
+
+          <div class="ally reveal reveal-d1">
+            <div class="ally__avatar" aria-hidden="true">DM</div>
+            <div>
+              <p class="ally__quote">"As an opposing advocate I found her formidable. As a colleague on the JSC reform committee I found her indispensable. The judiciary needs people who have fought from both sides of the bar."</p>
+              <cite class="ally__name">David Mugo, SC</cite>
+              <span class="ally__role">Senior Counsel, LSK Council Member</span>
+            </div>
+          </div>
+
+          <div class="ally reveal reveal-d2">
+            <div class="ally__avatar" aria-hidden="true">FM</div>
+            <div>
+              <p class="ally__quote">"She argued the land rights case that set precedent for 40,000 families in the Rift Valley. She did it pro bono. That tells you everything about why she wants to be a judge."</p>
+              <cite class="ally__name">Fr. Francis Mwaura</cite>
+              <span class="ally__role">Catholic Justice & Peace Commission, Nakuru</span>
+            </div>
+          </div>
+
+          <div class="ally reveal reveal-d3">
+            <div class="ally__avatar" aria-hidden="true">SW</div>
+            <div>
+              <p class="ally__quote">"When we needed an advocate willing to appear in a politically sensitive petition, Ekaterina accepted without hesitation. That kind of courage is exactly what appellate courts require."</p>
+              <cite class="ally__name">Sarah Wangari</cite>
+              <span class="ally__role">Director, Katiba Institute</span>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Supporting organisations -->
+        <div class="orgs reveal" style="margin-top: var(--space-lg);">
+          <p style="font-family:var(--font-ui);font-size:0.5625rem;letter-spacing:0.35em;text-transform:uppercase;color:var(--light-gold);text-align:center;margin-bottom:var(--space-md);">Organisations Endorsing the Campaign</p>
+          <div class="orgs__row">
+            <span class="orgs__item" style="border:1px solid var(--handa-gold);color:var(--handa-gold);background:rgba(212,160,23,0.08);padding:0.5rem 1rem;">Kenya Legal Aid Network</span>
+            <span class="orgs__item" style="border:1px solid var(--handa-gold);color:var(--handa-gold);background:rgba(212,160,23,0.08);padding:0.5rem 1rem;">Katiba Institute</span>
+            <span class="orgs__item" style="border:1px solid var(--handa-gold);color:var(--handa-gold);background:rgba(212,160,23,0.08);padding:0.5rem 1rem;">FIDA Kenya</span>
+            <span class="orgs__item" style="border:1px solid var(--handa-gold);color:var(--handa-gold);background:rgba(212,160,23,0.08);padding:0.5rem 1rem;">ICJ Kenya</span>
+            <span class="orgs__item" style="border:1px solid var(--handa-gold);color:var(--handa-gold);background:rgba(212,160,23,0.08);padding:0.5rem 1rem;">Strathmore Law School</span>
+            <span class="orgs__item" style="border:1px solid var(--handa-gold);color:var(--handa-gold);background:rgba(212,160,23,0.08);padding:0.5rem 1rem;">Law Society of Kenya — Nairobi Branch</span>
+            <span class="orgs__item" style="border:1px solid var(--handa-gold);color:var(--handa-gold);background:rgba(212,160,23,0.08);padding:0.5rem 1rem;">Kenya Human Rights Commission</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PLEDGE SUPPORT -->
+    <section class="section pledge" id="pledge" aria-labelledby="pledge-title">
+      <div class="container">
+        <div class="pledge__grid">
           <div>
-            <span class="section-eyebrow reveal">Beyond the Brief</span>
-            <h2 class="section-title reveal reveal-d1" id="personal-title">The Person<br/>Behind the Counsel</h2>
+            <span class="section-eyebrow reveal">Join the Campaign</span>
+            <h2 class="section-title reveal reveal-d1" id="pledge-title">Pledge Your<br/>Support</h2>
             <span class="gold-bar reveal reveal-d1"></span>
-            <p class="section-body reveal reveal-d2" style="margin-top:var(--space-md)">Ekaterina believes the best lawyers are the most human ones. She draws inspiration from architecture — finding in great buildings the same qualities she seeks in great legal arguments: clarity of structure, economy of means, and the quiet confidence of something built to last.</p>
-            <p class="section-body reveal reveal-d3" style="margin-top:var(--space-sm)">When not in chambers, she runs early mornings along Nairobi's Karura Forest, cooks Georgian recipes inherited from her grandmother, and mentors young women from under-resourced communities through the Handa Foundation scholarship programme.</p>
-          </div>
-          <div class="personal__values">
-            <div class="personal__value reveal reveal-d1">
-              <div class="personal__value-icon" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2L15 9H22L17 14L19 21L12 17L5 21L7 14L2 9H9Z"/></svg></div>
-              <div><h3 class="personal__value-title">Integrity above all</h3><p class="personal__value-desc">Every mandate is accepted on its merits, not its fees. Work that conflicts with her principles is declined — even when it is lucrative.</p></div>
+            <p class="section-body reveal reveal-d2" style="margin-top:var(--space-md)">The Judicial Service Commission process is rigorous, transparent, and ultimately public. What moves candidates forward is the demonstration of broad, credible support from across Kenyan society. Add your name and voice to this campaign.</p>
+
+            <div class="pledge__detail reveal reveal-d2">
+              <span class="pledge__detail-icon" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 1118 0z"/><circle cx="12" cy="10" r="3"/></svg></span>
+              <span class="pledge__detail-text">Campaign Headquarters — Handa & Associates, Upper Hill, Nairobi</span>
             </div>
-            <div class="personal__value reveal reveal-d2">
-              <div class="personal__value-icon" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg></div>
-              <div><h3 class="personal__value-title">Community stewardship</h3><p class="personal__value-desc">Through the Handa Foundation, Ekaterina funds legal education scholarships for fifteen talented students from East Africa each year.</p></div>
+            <div class="pledge__detail reveal reveal-d3">
+              <span class="pledge__detail-icon" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></span>
+              <span class="pledge__detail-text">campaign@ekaterina-handa.co.ke</span>
             </div>
-            <div class="personal__value reveal reveal-d3">
-              <div class="personal__value-icon" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg></div>
-              <div><h3 class="personal__value-title">Intellectual curiosity</h3><p class="personal__value-desc">A voracious reader of legal philosophy, economic history, and classical architecture — she believes the best minds draw from the widest wells.</p></div>
+            <div class="pledge__detail reveal reveal-d3">
+              <span class="pledge__detail-icon" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 8.81 19.79 19.79 0 01.04 2.21 2 2 0 012 0h3a2 2 0 012 1.72c.127.96.36 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.34 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg></span>
+              <span class="pledge__detail-text">+254 700 000 000</span>
             </div>
-            <div class="personal__value reveal reveal-d4">
-              <div class="personal__value-icon" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 21C7 17 2 14 2 9a5 5 0 0110 0 5 5 0 0110 0c0 5-5 8-10 12z"/></svg></div>
-              <div><h3 class="personal__value-title">Balanced life, sharper mind</h3><p class="personal__value-desc">A daily runner, occasional potter, and committed home cook — she approaches rest as a professional discipline, not an indulgence.</p></div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- TESTIMONIALS -->
-    <section class="section testimonials" id="testimonials" aria-labelledby="testimonials-title">
-      <div class="container">
-        <div class="testimonials__header">
-          <span class="section-eyebrow reveal">Endorsements</span>
-          <h2 class="section-title reveal reveal-d1" id="testimonials-title">Words of Those She Has Served</h2>
-        </div>
-        <div class="testimonials__grid">
-
-          <blockquote class="testimonial reveal reveal-d1">
-            <span class="testimonial__mark" aria-hidden="true">"</span>
-            <p class="testimonial__text">Ekaterina navigated a commercial dispute that had defeated two previous firms — in three months. Her grasp of both the technical legal architecture and the human dynamics at play was extraordinary. We won, but more importantly, we preserved a twenty-year commercial relationship.</p>
-            <footer class="testimonial__author">
-              <div class="testimonial__avatar" aria-hidden="true">RO</div>
-              <div><cite class="testimonial__name">Richard Okonkwo</cite><span class="testimonial__role">CEO, Meridian Capital Group</span></div>
-            </footer>
-          </blockquote>
-
-          <blockquote class="testimonial reveal reveal-d2">
-            <span class="testimonial__mark" aria-hidden="true">"</span>
-            <p class="testimonial__text">Few advocates combine Ekaterina's intellectual rigour with such genuine empathy for the people involved. She understood what was at stake — not just legally, but personally — and built our case around that understanding. The result spoke for itself.</p>
-            <footer class="testimonial__author">
-              <div class="testimonial__avatar" aria-hidden="true">SM</div>
-              <div><cite class="testimonial__name">Sophia Müller-Brecht</cite><span class="testimonial__role">General Counsel, Aerofin GmbH</span></div>
-            </footer>
-          </blockquote>
-
-          <blockquote class="testimonial reveal reveal-d3">
-            <span class="testimonial__mark" aria-hidden="true">"</span>
-            <p class="testimonial__text">I have sat across the table from hundreds of lawyers. Ekaterina is among a handful who made me wish she were on my side before I realised she was already my opponent. We settled on terms far better than our position warranted, and I learned something in the process.</p>
-            <footer class="testimonial__author">
-              <div class="testimonial__avatar" aria-hidden="true">JA</div>
-              <div><cite class="testimonial__name">Justice Amara (Ret.)</cite><span class="testimonial__role">Former High Court Judge, East Africa</span></div>
-            </footer>
-          </blockquote>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- CONTACT -->
-    <section class="section contact" id="contact" aria-labelledby="contact-title">
-      <div class="container">
-        <div class="contact__grid">
-          <div>
-            <span class="section-eyebrow reveal">Get in Touch</span>
-            <h2 class="section-title reveal reveal-d1" id="contact-title">Begin a<br/>Conversation</h2>
-            <span class="gold-bar reveal reveal-d1"></span>
-            <p class="section-body reveal reveal-d2" style="margin-top:var(--space-md)">Every significant matter begins with a single conversation. Ekaterina welcomes enquiries from prospective clients, professional colleagues, and media. Initial consultations are confidential and without obligation.</p>
-
-            <div class="contact__detail reveal reveal-d2">
-              <span class="contact__detail-icon" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 1118 0z"/><circle cx="12" cy="10" r="3"/></svg></span>
-              <span class="contact__detail-text">Nairobi · London · Paris</span>
-            </div>
-            <div class="contact__detail reveal reveal-d3">
-              <span class="contact__detail-icon" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></span>
-              <span class="contact__detail-text">counsel@ekaterina-handa.com</span>
-            </div>
-            <div class="contact__detail reveal reveal-d3">
-              <span class="contact__detail-icon" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 8.81 19.79 19.79 0 01.04 2.21 2 2 0 012 0h3a2 2 0 012 1.72c.127.96.36 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.34 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg></span>
-              <span class="contact__detail-text">+254 700 000 000 (By appointment)</span>
-            </div>
-
-            <div class="contact__social reveal reveal-d4" aria-label="Social media links">
-              <a href="#" class="contact__social-link" aria-label="LinkedIn"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
-              <a href="#" class="contact__social-link" aria-label="Twitter / X"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"/></svg></a>
-              <a href="#" class="contact__social-link" aria-label="Publications"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2z"/><path d="M22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z"/></svg></a>
+            <div class="pledge__social reveal reveal-d4" aria-label="Social media links">
+              <a href="#" class="pledge__social-link" aria-label="LinkedIn"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+              <a href="#" class="pledge__social-link" aria-label="Twitter / X"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"/></svg></a>
+              <a href="#" class="pledge__social-link" aria-label="Facebook"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></a>
             </div>
           </div>
 
           <div>
-            <form class="contact__form" id="contactForm" novalidate aria-label="Contact form">
+            <form class="pledge__form" id="pledgeForm" novalidate aria-label="Pledge support form">
               <div class="form-row">
                 <div class="field">
                   <label for="f-name">First Name</label>
@@ -627,26 +730,35 @@
                 <span class="field__error" id="f-email-err" role="alert">Please enter a valid email address</span>
               </div>
               <div class="field">
-                <label for="f-matter">Nature of Matter</label>
-                <select id="f-matter" name="matter">
-                  <option value="" disabled selected>Select a practice area</option>
-                  <option value="litigation">Commercial Litigation</option>
-                  <option value="corporate">Corporate Advisory</option>
-                  <option value="arbitration">International Arbitration</option>
-                  <option value="regulatory">Regulatory Defence</option>
-                  <option value="mediation">Dispute Mediation</option>
-                  <option value="contracts">Contract Architecture</option>
-                  <option value="other">Other</option>
+                <label for="f-county">County</label>
+                <select id="f-county" name="county">
+                  <option value="" disabled selected>Select your county</option>
+                  <option>Nairobi</option><option>Mombasa</option><option>Kisumu</option>
+                  <option>Nakuru</option><option>Eldoret / Uasin Gishu</option><option>Nyeri</option>
+                  <option>Meru</option><option>Kakamega</option><option>Kilifi</option>
+                  <option>Other County</option><option>Outside Kenya</option>
                 </select>
               </div>
               <div class="field">
-                <label for="f-message">Brief Description</label>
-                <textarea id="f-message" name="message" rows="5" placeholder="Describe the matter briefly. All enquiries are treated with strict confidentiality." required></textarea>
-                <span class="field__error" id="f-msg-err" role="alert">Please describe your matter</span>
+                <label for="f-capacity">I am pledging support as</label>
+                <select id="f-capacity" name="capacity">
+                  <option value="" disabled selected>Select your capacity</option>
+                  <option>Individual citizen</option>
+                  <option>Advocate / Legal professional</option>
+                  <option>Civil society organisation</option>
+                  <option>Academic / Researcher</option>
+                  <option>Business / Corporate</option>
+                  <option>Faith community leader</option>
+                  <option>Other</option>
+                </select>
               </div>
-              <button type="submit" class="btn-primary"><span>Send Enquiry</span></button>
+              <div class="field">
+                <label for="f-message">Why You Support This Campaign (optional)</label>
+                <textarea id="f-message" name="message" rows="4" placeholder="Your words may be featured on this campaign page, with your permission."></textarea>
+              </div>
+              <button type="submit" class="btn-primary"><span>Submit My Pledge</span></button>
               <div class="form-success" id="formSuccess" role="status" aria-live="polite">
-                <p><em>Thank you for your enquiry.</em><br/>Ekaterina's office will respond within two business days.</p>
+                <p><em>Your pledge is received.</em><br/>Thank you for standing with this campaign for a just Kenya.</p>
               </div>
             </form>
           </div>
@@ -662,53 +774,54 @@
       <div class="footer__top">
         <div>
           <div style="margin-bottom:var(--space-sm);color:var(--crimson)" aria-hidden="true">
-            <svg width="22" height="28" viewBox="0 0 28 34" fill="currentColor"><rect x="2" y="0" width="24" height="2.5"/><rect x="2" y="2.5" width="4" height="22"/><rect x="22" y="2.5" width="4" height="22"/><rect x="6" y="12" width="16" height="2.5"/><rect x="6" y="2.5" width="3" height="9"/><rect x="19" y="2.5" width="3" height="9"/><rect x="6" y="14.5" width="3" height="10"/><rect x="19" y="14.5" width="3" height="10"/><rect x="2" y="24.5" width="24" height="2.5"/><rect x="0" y="27" width="10" height="3"/><rect x="18" y="27" width="10" height="3"/></svg>
+            <svg width="22" height="22" viewBox="0 0 200 200" fill="currentColor" class="th-logo">
+              <rect x="20" y="20" width="160" height="14"/><rect x="20" y="20" width="14" height="160"/><rect x="166" y="20" width="14" height="160"/><rect x="20" y="166" width="60" height="14"/><rect x="120" y="166" width="60" height="14"/><rect x="62" y="20" width="14" height="90"/><rect x="124" y="20" width="14" height="90"/><rect x="62" y="96" width="76" height="14"/><rect x="62" y="110" width="14" height="70"/><rect x="124" y="110" width="14" height="70"/>
+            </svg>
           </div>
           <p class="footer__brand-name">Ekaterina Handa</p>
-          <span class="footer__brand-tagline">Refined presence, enduring craft.</span>
-          <p style="font-family:var(--font-body);font-size:0.875rem;line-height:1.75;color:rgba(253,246,238,0.4);max-width:280px">Distinguished legal counsel at the intersection of classical jurisprudence and modern precision.</p>
+          <span class="footer__brand-tagline">Justice. Integrity. Kenya.</span>
+          <p style="font-family:var(--font-body);font-size:0.875rem;line-height:1.75;color:rgba(253,246,238,0.4);max-width:280px;margin-top:var(--space-sm)">Candidate for the Court of Appeal · Nairobi Circuit · Judicial Service Commission Process 2027</p>
         </div>
         <div>
           <span class="footer__col-title">Navigate</span>
           <ul class="footer__links">
-            <li><a href="#about">About</a></li>
-            <li><a href="#practice">Practice Areas</a></li>
-            <li><a href="#journey">Professional Journey</a></li>
-            <li><a href="#personal">Personal</a></li>
-            <li><a href="#testimonials">Testimonials</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li><a href="#about">Profile</a></li>
+            <li><a href="#manifesto">Manifesto</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#journey">Journey</a></li>
+            <li><a href="#allies">Allies & Endorsements</a></li>
+            <li><a href="#pledge">Pledge Support</a></li>
           </ul>
         </div>
         <div>
           <span class="footer__col-title">Credentials</span>
           <ul class="footer__links">
             <li><a href="#">Lincoln's Inn</a></li>
+            <li><a href="#">High Court of Kenya</a></li>
             <li><a href="#">ICC Arbitration Panel</a></li>
             <li><a href="#">Sciences Po Alumni</a></li>
             <li><a href="#">Handa Foundation</a></li>
-            <li><a href="#">Publications</a></li>
+            <li><a href="#">LSK Member</a></li>
           </ul>
         </div>
       </div>
       <div class="footer__bottom">
-        <p class="footer__copy">© 2025 Ekaterina Handa. All rights reserved.</p>
+        <p class="footer__copy">© 2025 Ekaterina Handa Campaign. Authorised by Handa & Associates.</p>
         <nav class="footer__legal" aria-label="Legal links">
           <a href="#">Privacy Policy</a>
-          <a href="#">Terms of Engagement</a>
-          <a href="#">Regulatory Information</a>
+          <a href="#">Campaign Finance Disclosure</a>
+          <a href="#">JSC Guidelines</a>
         </nav>
       </div>
     </div>
   </footer>
 
   <script>
-    /* NAV scroll state */
     const nav = document.getElementById('nav');
     const updateNav = () => nav.classList.toggle('nav--scrolled', window.scrollY > 60);
     window.addEventListener('scroll', updateNav, { passive: true });
     updateNav();
 
-    /* Mobile menu */
     const navToggle = document.getElementById('navToggle');
     const navMobile = document.getElementById('navMobile');
     navToggle.addEventListener('click', () => {
@@ -729,20 +842,12 @@
       }
     });
 
-    /* Scroll reveal */
     const observer = new IntersectionObserver(entries => {
       entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
     }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
     document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
-    /* Lazy images */
-    const imgObserver = new IntersectionObserver(entries => {
-      entries.forEach(e => { if (e.isIntersecting && e.target.dataset.src) { e.target.src = e.target.dataset.src; e.target.removeAttribute('data-src'); imgObserver.unobserve(e.target); } });
-    }, { rootMargin: '200px' });
-    document.querySelectorAll('img[data-src]').forEach(img => imgObserver.observe(img));
-
-    /* Form validation */
-    const form = document.getElementById('contactForm');
+    const form = document.getElementById('pledgeForm');
     const formSuccess = document.getElementById('formSuccess');
     const setError = (id, errId, show) => {
       const el = document.getElementById(id), err = document.getElementById(errId);
@@ -755,22 +860,19 @@
       const name = document.getElementById('f-name').value.trim();
       const surname = document.getElementById('f-surname').value.trim();
       const email = document.getElementById('f-email').value.trim();
-      const msg = document.getElementById('f-message').value.trim();
       setError('f-name', 'f-name-err', !name);       if (!name) ok = false;
       setError('f-surname', 'f-surname-err', !surname); if (!surname) ok = false;
       const validEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
       setError('f-email', 'f-email-err', !validEmail);  if (!validEmail) ok = false;
-      setError('f-message', 'f-msg-err', !msg);         if (!msg) ok = false;
       if (ok) { form.style.display = 'none'; formSuccess.classList.add('visible'); }
     });
-    ['f-name','f-surname','f-email','f-message'].forEach(id => {
+    ['f-name','f-surname','f-email'].forEach(id => {
       document.getElementById(id)?.addEventListener('input', () => {
         document.getElementById(id)?.classList.remove('error');
         document.getElementById(id + '-err')?.classList.remove('visible');
       });
     });
 
-    /* Smooth scroll */
     document.querySelectorAll('a[href^="#"]').forEach(a => {
       a.addEventListener('click', e => {
         const t = document.getElementById(a.getAttribute('href').slice(1));
